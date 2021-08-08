@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Week 3 Python Assignment</title>
+</head>
+<body>
+
+<h1>Week 3 Python Assignment</h1>
+<h2>Minorka Hassell</h2>
+
+<h2>Questions1</h2>
+prob <- sqrt(40000)
+mean <- 1300
+round(pnorm(979, mean, prob, lower.tail = FALSE), 4)
+<br>
+output= 0.9458
+
+<h2>Questions2</h2>
+prob2 <- sqrt(1960000)
+mean <- 11000
+round(pnorm(8340, mean, prob2, lower.tail = FALSE), 4)
+<br>
+Output= 0.9713
+
+
+<h2>Questions3</h2>
+prob3 <- 3
+mean <- 80
+round(pnorm(85, mean, prob3) - pnorm(83, mean, prob3), 4)
+<br>
+Output= 0.1109
+
+
+<h2>Questions4</h2>
+mean <- 456
+std <- 123
+round(qnorm(.86, mean, std), 0)
+<br>
+output=589
+
+
+
+<h2>Questions5</h2>
+mean <- 6.13
+std2 <- 0.06
+round(qnorm(.93, mean, std2), 2)
+<br>
+Output=6.22
+<br>
+round(qnorm(.07, mean, std2), 2)
+<br>
+Output= 6.04
+
+<h2>Questions6</h2>
+mean <- 78.8
+std3 <- 9.8
+round(qnorm(.55, mean, std3))
+<br>
+Output=80
+<br>
+round(qnorm(.20, mean, std3))
+<br>
+Output=71
+
+
+<h2>Questions7</h2>
+mean <- 21.2<br>
+std4 <- 5.4<br>
+round(qnorm(.55, mean, std4), 1)
+<br>
+Output= 21.9
+
+
+<h2>Questions8</h2>
+round(pbinom(10, 151, .09), 4)
+<br>
+Output= 0.192
+
+<h2>Questions9</h2>
+samp <- function(sd, n) {<br>
+    return(sd/sqrt(n))<br>
+}
+pmean <- 48<br>
+std5 <- 7<br>
+n <- 147<br>
+msam <- samp(std5, n)<br>
+round(pnorm(48.83, pmean, msam, lower.tail = FALSE), 4)
+<br>
+Output=  0.0753
+
+<h2>Questions10</h2>
+pmean2 <- 91<br>
+std6<- 10<br>
+n <- 68<br>
+msam2 <- samp(std6,n)<br>
+round(pnorm(93.54, pmean2, msam2, lower.tail=FALSE), 4)
+<br>
+Output= 0.0181
+
+
+
+<h2>Questions11</h2>
+tikpasper <- function(r) {
+    <br>
+    return(.5*(log((1+r)/(1-r))))
+}<br>
+tikpas2 <- function(n) {<br>
+    return(1/sqrt(n-3))
+}<br>
+
+perc <- tikpasper(.07)<br>
+samp <- tikpas2(540)<br>
+p4 <- pnorm(tikpasper(.04), perc, samp)<br>
+p10 <- pnorm(tikpasper(.10), perc, samp)
+<br>
+round(p10 - p4, 4)<br>
+Output= 0.5153
+
+<h2>Questions12</h2>
+perc <- tikpasper(.23)<br>
+samp <- tikpas2(602)<br>
+p19 <- pnorm(tikpasper(.19), perc, samp)<br>
+p27 <- pnorm(tikpasper(.27), perc, samp, lower.tail=FALSE)<br>
+round(p19 + p27, 4)<br>
+Output=0.301
+
+<h2>Questions13</h2>
+smean <- 3.9<br>
+std <- 0.8<br>
+n <- 208<br>
+t <- abs(qt(.2/2, n-1)) #2 sided<br>
+stdt <- std/sqrt(n) <br>
+
+lower <- round(smean - t*stdt, 1)<br>
+upper <- round(smean + t*stdt, 1)<br>
+lower; upper<br>
+Output=3.8<br>
+Output=4
+
+
+<h2>Questions14</h2>
+smean <- 16.6<br>
+std <- 11<br>
+n <- 7472<br>
+t<- abs(qt(.02/2, n-1)) #2 sided<br>
+stdt <- std/sqrt(n)<br>
+lower <- round(smean - t*stdt, 1)<br>
+upper <- round(smean + t*stdt, 1)<br>
+lower; upper<br>
+Output= 16.3<br>
+Output= 16.9
+
+<h2>Questions15</h2>
+The upper-right graph describes this problem visually<br>
+grapc <- abs(qt(.05, 26-1)) #1 sided<br>
+round(t, 4)<br>
+Answer= 2.3268
+
+<h2>Questions16</h2>
+samp <- c(383.6, 347.1, 371.9, 347.6, 325.8, 337)<br>
+n <- length(samp)<br>
+smean <- round(sum(samp)/n, 2)<br>
+smean<br>
+std <- round(sqrt(var(samp)), 2)<br>
+std<br>
+cv <- round(abs(qt(.10/2, n-1)), 4)<br>
+cv<br>
+stdt <- std/sqrt(n)<br>
+lower <- round(smean - t*stdt, 2)<br>
+upper <- round(smean + t*stdt, 2)<br>
+lower; upper<br>
+Lower Bound= 331.58<br>
+Upper Bound = 372.76
+
+
+<h2>Questions17</h2>
+n <- 16<br>
+smean <- 46.4<br>
+std <- 2.45<br>
+t <- round(abs(qt(.2/2, n-1)), 3)<br>
+t<br>
+stdt <- std/sqrt(n)<br>
+lower <- round(smean - t*stdt, 1)<br>
+upper <- round(smean + t*stdt, 1)<br>
+lower; upper<br>
+Lower Bound= 45.6<br>
+Upper Bound = 47.2
+
+
+<h2>Questions18</h2>
+pmean <- 8<br>
+std <- 1.9<br>
+z <- 2.575 <br>
+n <- round(((z * std)/0.13)^2)<br>
+n<br>
+Answer= 1416
+
+
+<h2>Questions19</h2>
+pmean <- 12.6<br>
+var <- 3.61<br>
+std <- sqrt(var)<br>
+z <- 1.96<br>
+n <- round(((z*std)/0.19)^2)<br>
+n<br>
+pexp(12.79, 1/12.6)<br>
+pexp(12.41, 1/12.6)<br>
+Answer= 0.6265311
+
+
+<h2>Questions20</h2>
+n <- 2089 <br>
+fract <- 1 - 1734/n<br>
+round(fract, 3)<br>
+output=0.17<br>
+z <- 2.33<br>
+std <- sqrt((fract*(1-fract)) / n)<br>
+cc <- 0.5/n<br>
+lower <- round(fract - z * std - cc, 3)<br>
+upper <- round(fract + z * std + cc, 3)<br>
+lower; upper<br>
+output=0.151<br>
+output=0.189
+
+
+<h2>Questions21</h2>
+n <- 474 <br>
+fract <- 156/n<br>
+round(fract, 3)<br>
+output=0.329<br>
+z <- 1.96<br>
+std <- sqrt((fract*(1-fract)) / n)<br>
+cofint <- 0.5/n<br>
+lower <- round(fract - z * std - cofint, 3)<br>
+upper <- round(fract + z * std + cofint, 3)<br>
+lower; upper<br>
+output=0.286<br>
+output= 0.372
+</body>
+</html>
